@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const BlurredBackgroundStyle = styled.button`
+    width: 100%;
     padding: .75rem 1.3rem .75rem 1.5rem;
     text-transform: uppercase;
     color: #fff;

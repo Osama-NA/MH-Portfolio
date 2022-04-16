@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const GradientDarkBackgroundStyle = styled.button`
+    width: 100%;
     cursor: pointer;
     display: grid;
     place-items: center;

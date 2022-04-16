@@ -9,6 +9,10 @@ const HomeSectionStyle = styled.main`
     min-height: 100vh;
     background-color: ${({ theme }) => theme.colors.darkBlue};
 
+    #home{
+        position: absolute;
+        top: 0;
+    }
     .bottom-section-design{
         position: absolute;
         width: 100%;

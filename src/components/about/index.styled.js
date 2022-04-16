@@ -11,6 +11,10 @@ const AboutStyle = styled.main`
     overflow: hidden;
     position: relative;
     
+    #about{
+        position: absolute;
+        top: 17.5%;
+    }
     .particles-container{
         position: absolute;
         width: 100%;
@@ -72,7 +76,7 @@ const AboutStyle = styled.main`
 
         .buttons-container{
             position: relative;
-            width: 98%;
+            width: 100%;
             height: 300px;
             background-color: ${({ theme }) => theme.colors.darkBlue};
             border-radius: 0 60px 0 60px;
@@ -83,18 +87,23 @@ const AboutStyle = styled.main`
             padding: 0 3rem;
 
 
-            .unfilled-button{
-                letter-spacing: 8px;
-                font-weight: 400;
-                padding: 0.672rem 1.3rem 0.672rem 1.5rem;
-            }
-            button{
-                .background-gradient{
-                    background-size: auto 134%;
+            a{
+                width: 100%;
+                text-decoration: none;
 
-                    p{
-                        letter-spacing: 8px;
-                        padding: .5rem 1.3rem .5rem 1.5rem;
+                .unfilled-button{
+                    letter-spacing: 8px;
+                    font-weight: 400;
+                    padding: 0.672rem 1.3rem 0.672rem 1.5rem;
+                }
+                button{
+                    .background-gradient{
+                        background-size: auto 134%;
+
+                        p{
+                            letter-spacing: 8px;
+                            padding: .5rem 1.3rem .5rem 1.5rem;
+                        }
                     }
                 }
             }
@@ -145,7 +154,6 @@ const AboutStyle = styled.main`
 
             .buttons-container{
                 height: 250px;
-                width: 100%;
                 border-radius: 0 50px 0 50px;
 
                 padding: 0 2rem;
@@ -195,7 +203,6 @@ const AboutStyle = styled.main`
             }
 
             .buttons-container{
-                width: 100%;
                 height: 250px;
                 border-radius: 0 50px 0 50px;
 
@@ -218,7 +225,7 @@ const AboutStyle = styled.main`
                     position: absolute;
                     top: 0;
                     left: 0;
-                    background: linear-gradient(130deg,  ${({ theme }) => theme.colors.pink},  ${({ theme }) => theme.colors.darkBlue},  ${({ theme }) => theme.colors.blue});
+                    background: linear-gradient(130deg,  #ca003d,  ${({ theme }) => theme.colors.darkBlue},  #00b5d2);
                     border-radius: 0 50px 0 50px;
                     opacity: .6;
                 }

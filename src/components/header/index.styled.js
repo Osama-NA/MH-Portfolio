@@ -32,7 +32,6 @@ const HeaderStyle = styled.header`
         .menu{
             font-family: ${({ theme }) => theme.fonts.poppins};
             font-size: ${({ theme }) => theme.textSizes.desktop.text};
-            color: ${({ theme }) => theme.colors.gray};
             font-weight: 300;
             display: flex;
             flex-direction: row;
@@ -42,20 +41,21 @@ const HeaderStyle = styled.header`
                 opacity: 0;
                 cursor: pointer;
                 padding: 0 1.5rem;
-                transition: all .2s ease;
                 animation: expand .45s ease forwards;
 
-                :nth-child(4){ 
-                    animation-delay: .05s;
-                    padding-left: 0;
-                 }
+                a{
+                    color: ${({ theme }) => theme.colors.gray};
+                    text-decoration: none;
+                    transition: all .15s ease;
+
+                    :hover{ color: ${({ theme }) => theme.colors.white}; }
+                }
                 :nth-child(2){ animation-delay: .15s; }
                 :nth-child(3){ animation-delay: .3s; }
-                :nth-child(4){ 
+                :nth-child(4){
                     animation-delay: .45s;
                     padding-right: 0;
                  }
-                :hover{ color: ${({ theme }) => theme.colors.white}; }
             }
         }
 
@@ -179,11 +179,13 @@ const HeaderStyle = styled.header`
             @keyframes menuButtonSlideIn{
                 from{
                     opacity: 0;
-                    left: -5rem;
+                    // left: -5rem;
+                    transform: scale(0)
                 }
                 to{
                     opacity: 1;
-                    left: 1.6rem;
+                    // left: 1.6rem;
+                    transform: scale(1)
                 }
             }
             .menu-button{
@@ -194,7 +196,7 @@ const HeaderStyle = styled.header`
                 left: 1.6rem;
                 top: 1.25rem;
                 width: 24px;
-                animation: menuButtonSlideIn .3s ease-out forwards;
+                animation: menuButtonSlideIn .35s ease-out .2s forwards;
 
                 .dash{
                     position: relative;
@@ -258,7 +260,7 @@ const HeaderStyle = styled.header`
                         height: 1px;
                         width: 265px;
                         background-color: ${({ theme }) => theme.colors.white};
-                        opacity: 0.2;
+                        opacity: 0.1;
                     }
 
                     :nth-child(1){ padding: 1rem 0 1rem; }
@@ -278,11 +280,11 @@ const HeaderStyle = styled.header`
             @keyframes topToBottom{
                 from{
                     opacity: 0;
-                    transform: scale(0);
+                    top: -5rem;
                 }
                 to{
                     opacity: 1;
-                    transform: scale(1);
+                    top: 0;
                 }
             }
 
@@ -293,12 +295,12 @@ const HeaderStyle = styled.header`
                 position: relative;
                 left: 2px;
                 letter-spacing: 6px;
-                animation: topToBottom .25s ease-in forwards;
+                animation: topToBottom .35s ease-in forwards;
             }
         }
 
         .header-background{
-            background-image: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1649449059/Frame_45-J6lWoYgs_mld7w8.png');
+             background-image: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1650087025/mobile-menu-background_ylbezd.png');
         }
     }
 `;

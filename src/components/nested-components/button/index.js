@@ -1,6 +1,6 @@
 import GradientDarkBackground from "./components/GradientDarkBackground";
 import UnfilledButton from "./components/UnfilledButton";
-import BlurredBackground from "./components/BlurredkBackground";
+import BlurredBackground from "./components/BlurredBackground";
 
 const Button = ({ text, width, type }) => {
     const button = {

@@ -1,8 +1,8 @@
 import React from 'react'
 
-const AboutImage = () => {
+const AboutImage = ({image}) => {
     return (
-        <aside className="about-image">
+        <aside className="about-image" style={{backgroundImage: `url('${image}')`}}>
             <div className="gradient"></div>
         </aside>
   )

@@ -1,18 +1,19 @@
 import React from 'react'
 import Button from '../../nested-components/button/';
+import {Link} from 'react-router-dom';
 
-const ButtonsContainer = () => {
+const ButtonsContainer = ({cv}) => {
     return (
         <div className="buttons-container">
             {
                 isMobile() ? <>
-                    <Button text="Explore work" type="blurred background" />
-                    <Button text="Get in touch" type="blurred background" />
-                    <Button text="View CV" type="blurred background" />
+                    <a href="#galleries"><Button text="Explore work" type="blurred background" /></a>
+                    <a href="#contact"><Button text="Get in touch" type="blurred background" /></a>
+                    <a href={cv} target="_blank" rel="noopener noreferrer"><Button text="View CV" type="blurred background" /></a>
                 </> : <>
-                    <Button text="Explore work" type="gradient dark background" />
-                    <Button text="Get in touch" />
-                    <Button text="View CV" />
+                    <a href="#galleries"><Button text="Explore work" type="gradient dark background" /></a>
+                    <a href="#contact"><Button text="Get in touch" /></a>
+                    <a href={cv} target="_blank" rel="noopener noreferrer"><Button text="View CV" /></a>
                 </>
             }
         </div>

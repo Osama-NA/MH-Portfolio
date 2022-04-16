@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const UnfilledButtonStyle = styled.button`
+    width: 100%;
     cursor: pointer;
     padding: .6rem 1.3rem .6rem 1.5rem;
     text-transform: uppercase;

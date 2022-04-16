@@ -3,7 +3,7 @@ import React from 'react';
 import theme from '../../../themes/defaultTheme';
 
 const HEADER_BACKGROUND_IMG = 'https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1648844025/header-background_o5byae.png';
-// const MOBILE_HEADER_BACKGROUND_IMG = 'https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1649449059/Frame_45-J6lWoYgs_mld7w8.png';
+// const MOBILE_HEADER_BACKGROUND_IMG = 'https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1650087025/mobile-menu-background_ylbezd.png';
 
 const isMobile = () => document.body.offsetWidth < 769;
 
