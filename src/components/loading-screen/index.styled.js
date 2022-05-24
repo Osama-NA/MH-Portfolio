@@ -12,7 +12,7 @@ const LoadingScreenStyle = styled.nav`
 
     z-index: 10;
 
-    animation: fadeOut .15s linear 1.5s forwards;
+    animation: fadeOut .15s linear 1.6s forwards;
 
     @keyframes fadeOut{
         0%{

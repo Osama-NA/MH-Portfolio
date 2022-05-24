@@ -1,0 +1,15 @@
+Sections:
+- about
+- video
+- galleries
+- gallery
+- contacts
+
+Controllers:
+- getHomePageContent
+- getGalleryContent
+
+Steps:
+1) get page content
+2) split stored content into states of their own section
+3) pass states into their sections

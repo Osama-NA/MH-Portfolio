@@ -13,7 +13,7 @@ const BlurredBackgroundStyle = styled.button`
     backdrop-filter: blur(3px);
     background-color: rgb(255 255 255 / 10%);
 
-    border: 1.75px solid ${({ theme }) => theme.colors.white};
+    border: 2px solid ${({ theme }) => theme.colors.white};
     border-radius: 0 27px 0 27px;
 
     letter-spacing: 4px;

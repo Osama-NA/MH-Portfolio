@@ -10,7 +10,7 @@ const GradientDarkBackgroundStyle = styled.button`
     color: ${({ theme }) => theme.colors.white};
     background: linear-gradient( ${({ theme }) => theme.colors.darkBlue},  ${({ theme }) => theme.colors.darkBlue}) padding-box, 
     linear-gradient(35deg, ${({ theme }) => theme.colors.gray}, ${({ theme }) => theme.colors.gray}) border-box;
-    border: 1.75px solid transparent;
+    border: 2px solid transparent;
     border-radius: 0 25px 0 25px;
     padding: 2.6px 2.82px 2.9px 2.83px;
 

@@ -8,25 +8,20 @@ import {useState, useEffect} from 'react';
 
 const Index = () => {
 
-    const [scroll, setScroll] = useState(0);
     const [showPages, setShowPages] = useState(false);
 
     useEffect(() => {
-        document.addEventListener('scroll', () => {
-            setScroll(window.scrollY)
-        })
-
         setTimeout(() => {
             setShowPages(true);
         }, 1500);
-    })
+    }, [])
 
     return (
         <>
             <LoadingScreen />
             {
                 showPages ? <>
-                    <Header scroll={scroll} />
+                    <Header  />
                     <Pages />
                 </> : <></>
             }

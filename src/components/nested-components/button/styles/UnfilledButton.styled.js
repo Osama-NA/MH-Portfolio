@@ -13,7 +13,7 @@ const UnfilledButtonStyle = styled.button`
     
     background: linear-gradient( ${({ theme }) => theme.colors.darkBlue},  ${({ theme }) => theme.colors.darkBlue}) padding-box, 
     linear-gradient(35deg, ${({ theme }) => theme.colors.gray}, ${({ theme }) => theme.colors.gray}) border-box;
-    border: 1.75px solid transparent;
+    border: 2px solid transparent;
     border-radius: 0 25px 0 25px;
 
     letter-spacing: 4px;

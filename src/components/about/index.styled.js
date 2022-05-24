@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import x from './10.jpg';
+import mobileBackgroundImage from './mobileBackgroundImage.jpg';
 
 const AboutStyle = styled.main`
     padding-top: 125px;
@@ -15,23 +15,12 @@ const AboutStyle = styled.main`
         position: absolute;
         top: 17.5%;
     }
-    .particles-container{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
 
     .about-image{
         position: relative;
         width: 425px;
         height: 550px;
-        background-image: url('${x}');
-        background-attachment: fixed;
-        background-position-x: -160px;
-        background-position-y: 50%;
+        border-radius: 80px;
         background-repeat: no-repeat;
         background-size: cover;
 
@@ -46,19 +35,12 @@ const AboutStyle = styled.main`
         ::after{
             left: 0;
             top: 0;
+            border-radius: 0 0 60px 0;
         }
         ::before{
             bottom: 0;
             right: 0;
-        }
-
-        .gradient{
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: linear-gradient(128deg,rgb(255 0 77 / 38%),hsl(223deg 100% 13% / 45%),rgb(0 255 255 / 33%));
+            border-radius: 60px 0 0 0;
         }
     }
 
@@ -206,7 +188,8 @@ const AboutStyle = styled.main`
                 height: 250px;
                 border-radius: 0 50px 0 50px;
 
-                background-image: url('${x}');
+                background-image: url('${mobileBackgroundImage}');
+                // background-image: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1653317630/10_dbyrpy.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;

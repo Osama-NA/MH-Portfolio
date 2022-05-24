@@ -73,17 +73,6 @@ const HeaderStyle = styled.header`
         }
     }
 
-    .header-background{
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        // background-image: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1648844025/header-background_o5byae.png');
-        background-position: center;
-        background-size: cover;
-    }
-
     // TABLET DESIGN
     @media (min-width:769px) and (max-width: 1000px){
         padding: 1rem 2.5rem;
@@ -109,7 +98,7 @@ const HeaderStyle = styled.header`
         position: fixed;
         width: 100vw;
         padding: 0;
-        background-color: none;
+        background-color: ${({ theme }) => theme.colors.darkBlue};
 
         .content{
             display: flex;
@@ -299,8 +288,16 @@ const HeaderStyle = styled.header`
             }
         }
 
+
         .header-background{
-             background-image: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1650087025/mobile-menu-background_ylbezd.png');
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1650087025/mobile-menu-background_ylbezd.png');
+            background-position: center;
+            background-size: cover;
         }
     }
 `;

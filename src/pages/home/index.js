@@ -3,6 +3,7 @@ import HomeSection from '../../components/home/';
 import About from '../../components/about/';
 import {useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom'
+import BackgroundParticles from '../../components/BackgroundParticles/BackgroundParticles'
 
 const REQUEST_URL = `${process.env.REACT_APP_SERVER_URL}/portfolio/home-page-content`;
 const SERVER_SECRET = process.env.REACT_APP_SERVER_JWT_TOKEN;
@@ -29,8 +30,11 @@ const Home = () => {
 
     return (
         <HomePageStyle>
-            <HomeSection />
-            {content ? <Content content = {content} /> : <></>}
+            <HomeSection cv={content ? content.about.cv : null} />
+            
+            {content ? <Content content = {content} /> : null}
+
+            <BackgroundParticles />
         </HomePageStyle>
     )
 }

@@ -27,7 +27,7 @@ const particlesOptions = {
                 enable: true, 
                 area: 800
              }, 
-            value: isMobile() ? 50 : 30
+            value: isMobile() ? 25 : 20
          },
         opacity: {
             value: 0.55
@@ -36,7 +36,7 @@ const particlesOptions = {
             type: "circle"
         },
         size: {
-            value: { min: 1, max: isMobile() ? 4 : 3.5  }
+            value: { min: 1, max: 3.5  }
         }
     }
 }
