@@ -182,7 +182,7 @@ const HeaderStyle = styled.header`
                 display: flex;
                 flex-direction: column;
                 position: absolute;
-                left: 1.6rem;
+                left: 1rem;
                 top: 1.25rem;
                 width: 24px;
                 animation: menuButtonSlideIn .35s ease-out .2s forwards;

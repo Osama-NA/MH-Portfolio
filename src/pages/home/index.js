@@ -34,7 +34,7 @@ const Home = () => {
         <HomePageStyle>
             <HomeSection cv={content ? content.about.cv : null} />
             
-            {content ? <Content content = {content} /> : null}
+            {content && <Content content = {content} />}
 
             <BackgroundParticles />
         </HomePageStyle>
@@ -46,7 +46,7 @@ const Content = ({content}) => {
         <>
             <About content={content.about} />
             <Video video={content.video} />
-            <Galleries content={content.galleries} />
+            <Galleries galleries={content.galleries} />
         </>
     )
 }

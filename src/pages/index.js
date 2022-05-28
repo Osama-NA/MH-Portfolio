@@ -20,10 +20,10 @@ const Index = () => {
         <>
             <LoadingScreen />
             {
-                showPages ? <>
+                showPages && <>
                     <Header  />
                     <Pages />
-                </> : <></>
+                </>
             }
         </>
     );

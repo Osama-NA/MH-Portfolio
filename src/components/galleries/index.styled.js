@@ -28,7 +28,7 @@ const GalleriesStyle = styled.main`
         width: 100%;
         display: flex;
         flex-direction: column;
-        height: 200vh;
+
         .gallery{
             position: relative;
             margin: 4rem 0;
@@ -89,6 +89,7 @@ const GalleriesStyle = styled.main`
                 z-index: 1;
 
                 .image-container{
+                    cursor: pointer;
                     width: 285px;
                     height: 375px;
                     border-radius: 0 50px 0 50px;
@@ -197,39 +198,156 @@ const GalleriesStyle = styled.main`
         }
     }
 
-    // @media (min-width: 769px) and (max-width: 1000px){
-    //     min-width: 90px;
-    //     border-radius: 0 23px 0 23px;
-    //     padding: 2.25px 2.2px 2.4px 2.2px;
+    @media (min-width: 769px) and (max-width: 1000px){
+        padding: 3.25rem 0;
+        
+        #galleries{
+            top: 0;
+        }
 
-    //     .background-gradient{
-    //         border-radius: 0 19px 0 19px;
+        .galleries-title{
+            font-size: 57px;
+        }
 
-    //         p{
-    //             font-size: ${({ theme }) => theme.textSizes.tablet.upperCaseText};
-    //             padding: .45rem 1.3rem .4rem 1.5rem;
-    //         }
-    //     }
-    // }
+        .galleries-container{
+            .gallery{
+                margin: 2.5rem 0;
 
-    // @media (max-width: 768px){
-    //     min-width: 60px;
-    //     border-radius: 0 17.5px 0 17.5px;
-    //     padding: 2.4px 2px 2.4px 2px;
+                .gallery-title-container{
+                    .gallery-title{
+                        padding: 0 2rem;
+                        
+                        h2{
+                            font-size:  ${({ theme }) => theme.textSizes.tablet.title};
+                        }
+                        .left, .right{
+                            font-size: 8px;
+                        }
+                    }
+                }
 
-    //     :hover{
-    //         animation: none;
-    //     }
+                .images{
+                    padding: 5rem 1rem 1rem;
 
-    //     .background-gradient{
-    //         border-radius: 0 14px 0 14px;
+                    .image-container{
+                        width: 235px;
+                        height: 320px;
+                        border-radius: 0 45px 0 45px;
+                        margin: 0 1rem;
+                    }
+                }
 
-    //         p{
-    //             font-size: ${({ theme }) => theme.textSizes.mobile.upperCaseText};
-    //             padding: .25rem .8rem .25rem 1rem;
-    //         }
-    //     }
-    // }
+                .view-gallery-container{
+                    padding: 4rem 0 0;
+
+                    .view-button-container{
+                        padding: 0 2rem;
+
+                        .view-button{
+                            width: 160px;
+                            border-radius: 0 23px 0 23px;
+                            padding: 2px 2.2px 2.13px 2.2px;
+
+                            .gradient{
+                                    border-radius: 0 19px 0 19px;
+
+                                    p{
+                                        font-size: ${({ theme }) => theme.textSizes.tablet.upperCaseText};
+                                        padding: .45rem 1.3rem .4rem 1.5rem;
+                                    }
+                                }
+                            }
+                        }
+                        .left, .right{
+                            font-size: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px){
+        padding: 3rem 0;
+        
+        #galleries{
+            top: 0;
+        }
+
+        .galleries-title{
+            position: relative;
+            right: -8px;
+            font-size: 32px;
+            letter-spacing: 20px;
+        }
+
+        .galleries-container{
+            .gallery{
+                margin: 2.25rem 0;
+
+                .gallery-title-container{
+                    .arrow{
+                        height: 1px;
+                    }
+                    .gallery-title{
+                        padding: 0 1.75rem;
+                        
+                        h2{
+                            font-size:  ${({ theme }) => theme.textSizes.mobile.title};
+                            font-weight: 600;
+                            letter-spacing: 3px;
+                        }
+                        .left, .right{
+                            font-size: 7px;
+                        }
+                    }
+                }
+
+                .images{
+                    padding: 3rem 1rem 1rem;
+
+                    .image-container{
+                        width: 110px;
+                        height: 135px;
+                        border-radius: 0 20px 0 20px;
+                        margin: 0 .5rem;
+                    }
+                }
+
+                .view-gallery-container{
+                    padding: 2.25rem 0 0;
+
+                    .arrow{
+                        height: 1px;
+                    }
+                    .view-button-container{
+                        padding: 0 2.5rem;
+
+                        .view-button{
+                            width: 140px;
+                            border-radius: 0 17.5px 0 17.5px;
+                            padding: 2.4px 2px 2.2px 2px;
+
+                            :hover{
+                                animation: none;
+                            }
+                            .gradient{
+                                border-radius: 0 14px 0 14px;
+
+                                p{
+                                    font-size: ${({ theme }) => theme.textSizes.mobile.upperCaseText};
+                                    font-weight: 300;
+                                    padding: .3rem .8rem .3rem 1rem;
+                                }
+                            }
+                        .left, .right{
+                            font-size: 7px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 `
 
 export default GalleriesStyle

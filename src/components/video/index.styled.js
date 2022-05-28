@@ -3,10 +3,13 @@ import styled from 'styled-components'
 const VideoStyle = styled.section`
     width: 100%;
     height: 665px;
+    display: grid;
+    place-items: center;
     background-color: ${({ theme }) => theme.colors.black};
 
     video{
-        width: 100%;
+        width: auto;
+        max-width: 100vw;
         height: 100%;
         border: 0;
         outline: 0;
