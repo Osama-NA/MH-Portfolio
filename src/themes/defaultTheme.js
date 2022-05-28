@@ -10,7 +10,8 @@ const theme = {
         gray: "#ccc",
         darkBlue: '#001240',
         blue: '#00D2D2',
-        pink: "#FF004D"
+        pink: "#FF004D",
+        black: '#00081b'
     },
     textSizes: {
         desktop: {

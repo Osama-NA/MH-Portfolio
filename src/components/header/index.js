@@ -20,7 +20,7 @@ const Header = () => {
         <HeaderStyle>
             <div className="content">
                 <MenuButton menu={menu} />
-                <Link duration={500} smooth={true} spy={true} to="home"><h1 className="logo">Mohamad Hamoudi</h1></Link>
+                <Link duration={500} smooth={true} spy={true} to="home"><h1 className="logo">Mohammad Hammoudi</h1></Link>
                 <Menu menu={menu} />
             </div>
 

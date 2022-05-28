@@ -11,11 +11,6 @@ const HomeSectionStyle = styled.main`
     background-color: ${({ theme }) => theme.colors.darkBlue};
     z-index: 0;
 
-    #home{
-        position: absolute;
-        top: 0;
-    }
-
     .container{
         position: relative;
         display: flex;

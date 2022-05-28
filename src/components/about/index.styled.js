@@ -114,11 +114,18 @@ const AboutStyle = styled.main`
         .about-image{
             width: 310px;
             height: 450px;
+            border-radius: 45px;
 
             ::after, ::before{
-                width: 22.5px;
-                height: 22.5px;
-                border: 22.5px solid ${({ theme }) => theme.colors.offWhite};
+                width: 20px;
+                height: 20px;
+                border: 20px solid ${({ theme }) => theme.colors.offWhite};
+            }
+            ::after{
+                border-radius: 0 0 35px 0;
+            }
+            ::before{
+                border-radius: 35px 0 0 0;
             }
         }
 

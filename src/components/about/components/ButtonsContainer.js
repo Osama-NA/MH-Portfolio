@@ -18,7 +18,7 @@ const ButtonsContainer = ({ cv }) => {
                     <a href={cv} target="_blank" rel="noopener noreferrer"><Button text="View CV" type="blurred background" /></a>
                 </> : <>
                     <Link duration={SCROLL_DURATION} smooth={true} spy={true} to="galleries">
-                        <Button text="Explore work" type="gradient dark background" />
+                        <Button text="Explore work" type="dark gradient background" />
                     </Link>
                     <Link duration={SCROLL_DURATION} smooth={true} spy={true} to="contact">
                         <Button text="Get in touch" />

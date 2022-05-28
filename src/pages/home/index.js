@@ -1,6 +1,8 @@
 import HomePageStyle from "./index.styled";
 import HomeSection from '../../components/home/';
 import About from '../../components/about/';
+import Video from '../../components/video/';
+import Galleries from '../../components/galleries/';
 import {useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom'
 import BackgroundParticles from '../../components/BackgroundParticles/BackgroundParticles'
@@ -43,6 +45,8 @@ const Content = ({content}) => {
     return(
         <>
             <About content={content.about} />
+            <Video video={content.video} />
+            <Galleries content={content.galleries} />
         </>
     )
 }
