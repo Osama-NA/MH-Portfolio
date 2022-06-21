@@ -238,15 +238,17 @@ const HomeSectionStyle = styled.main`
                 }
 
                 ::after{
-                    top: -12px;
-                    left: -1.75rem;
-                    opacity: .3;
+                    // top: -12px;
+                    // left: -1.75rem;
+                    // opacity: .3;
+                    display: none;
                 }
                 .dash{
-                    top: -13px;
-                    left: -2.1rem;
-                    height: 1px;
-                    width: 12px;
+                    // top: -13px;
+                    // left: -2.1rem;
+                    // height: 1px;
+                    // width: 12px;
+                    display: none;
                 }
             }
 
@@ -280,6 +282,7 @@ const HomeSectionStyle = styled.main`
             opacity: .6;
             background: url('${blurredColors}');
             background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
         }
     }

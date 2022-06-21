@@ -13,7 +13,7 @@ const Title = ({ title, color, weight, letterSpacing }) => {
         }
 
         if (color === themes.colors.white ) {
-            setFontWeight("600");
+            setFontWeight("500");
         } else if (color === themes.colors.darkBlue) {
             setFontWeight("700");
         }

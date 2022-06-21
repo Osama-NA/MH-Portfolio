@@ -3,6 +3,7 @@ import HomeSection from '../../components/home/';
 import About from '../../components/about/';
 import Video from '../../components/video/';
 import Galleries from '../../components/galleries/';
+import Contact from '../../components/contact/';
 import {useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom'
 import BackgroundParticles from '../../components/BackgroundParticles/BackgroundParticles'
@@ -47,6 +48,7 @@ const Content = ({content}) => {
             <About content={content.about} />
             <Video video={content.video} />
             <Galleries galleries={content.galleries} />
+            <Contact contacts={content.contacts} />
         </>
     )
 }

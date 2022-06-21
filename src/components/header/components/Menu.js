@@ -12,7 +12,7 @@ const Menu = ({menu}) => {
 }
 
 const LinkTo = ({to, text}) => {
-    return <li><Link duration={500} smooth={true} spy={true} to={to}>{text}</Link></li>
+    return <li><Link duration={450} smooth={true} spy={true} to={to}>{text}</Link></li>
 }
 
 export default Menu;

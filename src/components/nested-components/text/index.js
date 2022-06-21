@@ -8,7 +8,7 @@ const Text = ({text, color}) => {
 
     const handleTextStyle = useCallback(() => {
         if (color === themes.colors.white) {
-            setFontWeight("300");
+            setFontWeight("200");
         } else if (color === themes.colors.darkBlue) {
             setFontWeight("400");
         }
