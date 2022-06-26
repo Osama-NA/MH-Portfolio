@@ -214,7 +214,7 @@ const HomeSectionStyle = styled.main`
             justify-content: space-between;
 
             .content{
-                margin: 0 0 5.5rem 1.15rem;
+                margin: 0 0 5.5rem 0;
 
                 h1,h2{
                     font-size: 22px;

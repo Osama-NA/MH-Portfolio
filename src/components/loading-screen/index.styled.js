@@ -12,7 +12,7 @@ const LoadingScreenStyle = styled.nav`
 
     z-index: 10;
 
-    animation: fadeOut .15s linear 1.6s forwards;
+    animation: fadeOut .25s linear 1.75s forwards;
 
     @keyframes fadeOut{
         0%{
@@ -59,7 +59,7 @@ const LoadingScreenStyle = styled.nav`
             width: 20px;
             height: 2px;
             background-color: ${({ theme }) => theme.colors.darkBlue};
-            animation: load 1.5s ease infinite;
+            animation: load 1.75s ease infinite;
         }
     }
     .blur-layer{

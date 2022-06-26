@@ -121,6 +121,7 @@ const GalleriesStyle = styled.main`
                     z-index: 1;
 
                     .view-button{
+                        text-decoration: none;
                         width: 184px;
                         cursor: pointer;
                         display: grid;
@@ -129,7 +130,7 @@ const GalleriesStyle = styled.main`
                         color: ${({ theme }) => theme.colors.white};
                         border: 2px solid transparent;
                         border-radius: 0 25px 0 25px;
-                        padding: 2.6px 2.82px 2.9px 2.83px;
+                        padding: 1.6px 1.82px 2px 1.83px;
                         background: linear-gradient( ${({ theme }) => theme.colors.white},  ${({ theme }) => theme.colors.white}) padding-box, 
                         linear-gradient(35deg, ${({ theme }) => theme.colors.darkBlue}, ${({ theme }) => theme.colors.darkBlue}) border-box;
                     
@@ -246,7 +247,7 @@ const GalleriesStyle = styled.main`
                         .view-button{
                             width: 160px;
                             border-radius: 0 23px 0 23px;
-                            padding: 2px 2.2px 2.13px 2.2px;
+                            padding: 1.5px 1.7px 1.1.2px 1.7px;
 
                             .gradient{
                                     border-radius: 0 19px 0 19px;
@@ -279,6 +280,7 @@ const GalleriesStyle = styled.main`
             right: -8px;
             font-size: 32px;
             letter-spacing: 20px;
+            font-weight: 200;
         }
 
         .galleries-container{
@@ -304,10 +306,10 @@ const GalleriesStyle = styled.main`
                 }
 
                 .images{
-                    padding: 3rem 1rem 1rem;
+                    padding: 3.5rem 1rem 1.5rem;
 
                     .image-container{
-                        width: 110px;
+                        width: 95px;
                         height: 135px;
                         border-radius: 0 20px 0 20px;
                         margin: 0 .5rem;
@@ -326,7 +328,7 @@ const GalleriesStyle = styled.main`
                         .view-button{
                             width: 140px;
                             border-radius: 0 17.5px 0 17.5px;
-                            padding: 2.4px 2px 2.2px 2px;
+                            padding: 1.2px 1.2px 1.2px 1.2px;
 
                             :hover{
                                 animation: none;

@@ -3,11 +3,12 @@ import theme from '../../themes/defaultTheme';
 import Title from '../nested-components/title/'
 import Text from '../nested-components/text/';
 import ButtonsContainer from './components/ButtonsContainer';
+import BackgroundParticles from '../../components/BackgroundParticles/BackgroundParticles'
 
-const About = ({content}) => {
+const About = ({ content, aboutRef }) => {
     return (
         <AboutStyle>
-            <div id="about"></div>
+            <div id="about" ref={aboutRef}></div>
 
             <aside className="about-image" style={{ backgroundImage: `url('${content.image}')` }} />
 
@@ -16,6 +17,8 @@ const About = ({content}) => {
                 <Text text={content.info} color={theme.colors.darkBlue} />
                 <ButtonsContainer cv={content.cv} />
             </article>
+
+            <BackgroundParticles />
         </AboutStyle>
     );
 }

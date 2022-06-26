@@ -8,12 +8,12 @@ import Arrows from './components/Arrows'
 import SuccessMessage from './components/SuccessMessage'
 import { useState } from 'react'
 
-const Index = ({ contacts }) => {
+const Index = ({ contacts, contactsRef }) => {
     const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
     return (
         <ContactStyle>
-            <div id="contact"></div>
+            <div id="contact" ref={contactsRef}></div>
 
             <article className="info-container">
                 <Title title="Get in touch!" color={theme.colors.white} />

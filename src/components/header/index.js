@@ -3,7 +3,6 @@ import { useRef, useEffect, useState } from 'react';
 import Menu from './components/Menu';
 import MenuButton from './components/MenuButton';
 import HeaderBackground from './components/HeaderBackground';
-import { Link } from 'react-scroll';
 
 const Header = () => {
     const menu = useRef();
@@ -20,7 +19,7 @@ const Header = () => {
         <HeaderStyle>
             <div className="content">
                 <MenuButton menu={menu} />
-                <Link duration={500} smooth={true} spy={true} to="home"><h1 className="logo">Mohammad Hammoudi</h1></Link>
+                <a  href="/"><h1 className="logo">Mohammad Hammoudi</h1></a>
                 <Menu menu={menu} />
             </div>
 

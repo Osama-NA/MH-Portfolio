@@ -173,7 +173,7 @@ const AboutStyle = styled.main`
 
     @media (max-width: 768px){
         padding-top: 20px;
-        min-height: 820px;
+        min-height: 700px;
 
         .about-image{
             display: none;

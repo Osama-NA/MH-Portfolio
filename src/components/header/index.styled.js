@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import backgroundHeader from './gallery-header-bg.png'
 
 const HeaderStyle = styled.header`
     position: fixed;
@@ -59,6 +60,10 @@ const HeaderStyle = styled.header`
             }
         }
 
+        a{
+            color: ${({ theme }) => theme.colors.white};
+            text-decoration: none;
+        }
         .logo{
             opacity: 0;
             position: relative;
@@ -71,6 +76,16 @@ const HeaderStyle = styled.header`
             text-transform: uppercase;
             animation: expand .45s ease forwards;
         }
+    }
+    .header-background{
+        position: absolute;
+        top: 0;
+        left: -1px;
+        height: 100%;
+        width: 101%;
+        background-image: url('${backgroundHeader}');
+        background-position: center;
+        background-size: cover;
     }
 
     // TABLET DESIGN
@@ -290,11 +305,6 @@ const HeaderStyle = styled.header`
 
 
         .header-background{
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
             background-image: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1650087025/mobile-menu-background_ylbezd.png');
             background-position: center;
             background-size: cover;

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useRef, useState } from 'react'
 import Images from './Images'
+import { Link } from 'react-router-dom'
 
 const observerOptions = {
     root: null,
@@ -43,11 +44,19 @@ const Gallery = ({gallery}) => {
         }
     }, [containerRef])
 
+    useEffect(() => {
+        return () => {
+            setScroll(0)
+            setScrollDirection('down')
+            setIsVisible(false)
+        }
+    }, [])
+
     return (
         <section className="gallery" ref={containerRef}>
             <GalleryTitle title={gallery.galleryName}  />
             <Images scroll={scroll} scrollDirection={scrollDirection} isVisible={isVisible} gallery={gallery.gallery} />
-            <ViewGallery />
+            <ViewGallery galleryName={gallery.galleryName} />
         </section>
     )
 }
@@ -65,18 +74,20 @@ const GalleryTitle = ({title}) => {
     )
 }
 
-const ViewGallery = () => {
+const ViewGallery = ({ galleryName }) => {
     return(
         <div className="view-gallery-container">
             <div className="arrow"></div>
 
             <div className="view-button-container">
                 <i className="fa-solid fa-play left" />
-                <div className="view-button">
+
+                <Link className="view-button" to={`gallery/${galleryName}`}>
                     <div className="gradient">
                         <p>View Gallery</p>
                     </div>
-                </div>
+                </Link>
+
                 <i className="fa-solid fa-play right" />
             </div>
         </div>

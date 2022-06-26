@@ -4,17 +4,45 @@ import About from '../../components/about/';
 import Video from '../../components/video/';
 import Galleries from '../../components/galleries/';
 import Contact from '../../components/contact/';
-import {useEffect, useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom'
-import BackgroundParticles from '../../components/BackgroundParticles/BackgroundParticles'
+import { useEffect, useState, useCallback, useContext, useRef } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom'
+import {GalleriesContext} from '../../context/GalleriesContext'
 
 const REQUEST_URL = `${process.env.REACT_APP_SERVER_URL}/portfolio/home-page-content`;
 const SERVER_SECRET = process.env.REACT_APP_SERVER_JWT_TOKEN;
 
 const Home = () => {
+    const aboutRef = useRef()
+    const contactsRef = useRef()
+    const galleriesRef = useRef()
+
     const [content, setContent] = useState(null);
 
+    const { setGalleries } = useContext(GalleriesContext)
+
     const navigate = useNavigate();
+
+    const [params] = useSearchParams()
+
+    const handleNavigation = useCallback(() => {
+        const sectionName = params.get('to')
+
+        if (sectionName === null) return
+        
+        switch (sectionName){
+            case 'About':
+                aboutRef.current.scrollIntoView()
+                break;
+            case 'Galleries':
+                galleriesRef.current.scrollIntoView()
+                break;
+            case 'Contact':
+                contactsRef.current.scrollIntoView()
+                break;
+            default:
+                break;
+        }
+    }, [params])
 
     const getContent = useCallback(async () => {
         const response = await fetch(REQUEST_URL, { headers: { 'x-access-token': SERVER_SECRET } });
@@ -22,35 +50,25 @@ const Home = () => {
 
         if (data.status === 'ok') {
             setContent(data.content)
+            setGalleries(data.content.galleries)
+            handleNavigation()
         } else {
             navigate('page-not-found');
         }
-    }, [navigate])
+    }, [handleNavigation, navigate, setGalleries])
 
     useEffect(() => {
         getContent();
     }, [getContent])
 
-    return (
+    return content &&
         <HomePageStyle>
-            <HomeSection cv={content ? content.about.cv : null} />
-            
-            {content && <Content content = {content} />}
-
-            <BackgroundParticles />
+            <HomeSection cv={content.about.cv} />
+            <About content={content.about} aboutRef={aboutRef} />
+            <Video video={content.video}/>
+            <Galleries galleries={content.galleries} galleriesRef={galleriesRef} />
+            <Contact contacts={content.contacts} contactsRef={contactsRef} />
         </HomePageStyle>
-    )
-}
-
-const Content = ({content}) => {
-    return(
-        <>
-            <About content={content.about} />
-            <Video video={content.video} />
-            <Galleries galleries={content.galleries} />
-            <Contact contacts={content.contacts} />
-        </>
-    )
 }
 
 export default Home;

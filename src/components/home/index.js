@@ -10,6 +10,10 @@ const HomeSection = ({ cv }) => {
         document.addEventListener('scroll', () => {
             setScroll(window.scrollY)
         })
+
+        return () => {
+            setScroll(null)
+        }
     }, [])
 
     return (
