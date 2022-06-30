@@ -45,15 +45,20 @@ const Home = () => {
     }, [params])
 
     const getContent = useCallback(async () => {
-        const response = await fetch(REQUEST_URL, { headers: { 'x-access-token': SERVER_SECRET } });
-        const data = await response.json();
+        try{
+            const response = await fetch(REQUEST_URL, { headers: { 'x-access-token': SERVER_SECRET } });
+            const data = await response.json();
 
-        if (data.status === 'ok') {
-            setContent(data.content)
-            setGalleries(data.content.galleries)
-            handleNavigation()
-        } else {
+            if (data.status === 'ok') {
+                setContent(data.content)
+                setGalleries(data.content.galleries)
+                handleNavigation()
+            } else {
+                navigate('page-not-found');
+            }
+        } catch (error) {
             navigate('page-not-found');
+            console.log(error)
         }
     }, [handleNavigation, navigate, setGalleries])
 
