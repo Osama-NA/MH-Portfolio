@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import pic from './pic.png'
 
 const GalleriesStyle = styled.main`
     position: relative;
@@ -7,12 +6,12 @@ const GalleriesStyle = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5rem 0;
+    padding: 0 0 5rem;
     background-color: ${({ theme }) => theme.colors.offWhite};
     
     #galleries{
         position: absolute;
-        top: 0;
+        top: -12.5%;
     }
 
     .galleries-title{
@@ -21,7 +20,7 @@ const GalleriesStyle = styled.main`
         text-transform: uppercase;
         font-size: 75px;
         font-weight: 100;
-        letter-spacing: 20px;
+        letter-spacing: 25px;
     }
 
     .galleries-container{
@@ -130,7 +129,7 @@ const GalleriesStyle = styled.main`
                         color: ${({ theme }) => theme.colors.white};
                         border: 2px solid transparent;
                         border-radius: 0 25px 0 25px;
-                        padding: 1.6px 1.82px 2px 1.83px;
+                        padding: 1.8px 1.82px 2px 1.83px;
                         background: linear-gradient( ${({ theme }) => theme.colors.white},  ${({ theme }) => theme.colors.white}) padding-box, 
                         linear-gradient(35deg, ${({ theme }) => theme.colors.darkBlue}, ${({ theme }) => theme.colors.darkBlue}) border-box;
                     

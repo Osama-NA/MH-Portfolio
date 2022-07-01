@@ -82,6 +82,7 @@ const HeaderStyle = styled.header`
         top: 0;
         left: -1px;
         height: 100%;
+        max-width: 1600px;
         width: 101%;
         background-image: url('${backgroundHeader}');
         background-position: center;

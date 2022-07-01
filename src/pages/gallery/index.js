@@ -1,9 +1,14 @@
 import GalleryPageStyle from "./index.styled";
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext, useCallback } from 'react';
 import { GalleriesContext } from '../../context/GalleriesContext'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Gallery from './components/Gallery'
+import BackButton from './components/BackButton'
 
-const Gallery = () => {
+const REQUEST_URL = gallery => `${process.env.REACT_APP_SERVER_URL}/portfolio/get-gallery?gallery=${gallery}`;
+const SERVER_SECRET = process.env.REACT_APP_SERVER_JWT_TOKEN;
+
+const Index = () => {
     const [gallery, setGallery] = useState([]);
     const [galleryName, setGalleryName] = useState('')
 
@@ -11,42 +16,42 @@ const Gallery = () => {
 
     const location = useLocation()
 
+    const navigate = useNavigate();
+
+    const getGallery = useCallback(async () => {
+        try {
+            const response = await fetch(REQUEST_URL(galleryName), { headers: { 'x-access-token': SERVER_SECRET } });
+            const data = await response.json();
+
+            if (data.status === 'ok') {
+                setGallery(data.gallery)
+            }
+        } catch (error) {
+            navigate('/page-not-found');
+            console.log(error)
+        }
+    }, [galleryName, navigate])
+
     useEffect(() => {
         const thisGalleryName = location.pathname.replace("/gallery/", "")
         const thisGallery = galleries.filter(gallery => gallery.galleryName === thisGalleryName)
 
-        console.log(thisGallery)
         setGalleryName(thisGalleryName)
         if (thisGallery.length > 0) setGallery(thisGallery[0].gallery)
-    }, [galleries, location.pathname])
+        else getGallery()
+    }, [galleries, getGallery, location.pathname])
 
     return (
         <GalleryPageStyle>
             <header className="gallery-header">
                 <h1>{galleryName}</h1>
 
-                <button>
-                    <div className="background-gradient">
-                        <i className="fa-solid fa-left-long"></i>
-                        <p>Back</p>
-                    </div>
-                </button>
+                <BackButton />
             </header>
 
-            <section className="gallery">
-                {
-                    gallery.map((image, i) => {
-                        return <div key={image._id} className={i % 2 === 0 ? 'wide' : 'tall'}>
-                            <img
-                                src={image.imageURL}
-                                alt={galleryName}
-                            />
-                        </div>
-                    })
-                }
-            </section>
+            <Gallery gallery={gallery} galleryName={galleryName} />
         </GalleryPageStyle>
     )
 }
 
-export default Gallery;
+export default Index;

@@ -1,7 +1,7 @@
 import HomePageStyle from "./index.styled";
 import HomeSection from '../../components/home/';
 import About from '../../components/about/';
-import Video from '../../components/video/';
+// import Video from '../../components/video/';
 import Galleries from '../../components/galleries/';
 import Contact from '../../components/contact/';
 import { useEffect, useState, useCallback, useContext, useRef } from 'react';
@@ -70,7 +70,7 @@ const Home = () => {
         <HomePageStyle>
             <HomeSection cv={content.about.cv} />
             <About content={content.about} aboutRef={aboutRef} />
-            <Video video={content.video}/>
+            {/* <Video video={content.video}/> */}
             <Galleries galleries={content.galleries} galleriesRef={galleriesRef} />
             <Contact contacts={content.contacts} contactsRef={contactsRef} />
         </HomePageStyle>
