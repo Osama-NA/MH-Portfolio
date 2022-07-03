@@ -30,6 +30,26 @@ const HeaderStyle = styled.header`
                 }
             }
 
+            @keyframes fadeIn{
+                from{
+                    opacity: 0;
+                }
+                to{
+                    opacity: 1;
+                }
+            }
+
+            @keyframes topToBottom{
+                from{
+                    opacity: 0;
+                    transform: translateY(-100%);
+                }
+                to{
+                    opacity: 1;
+                    transform: translateY(0%);
+                }
+            }
+
         .menu{
             font-family: ${({ theme }) => theme.fonts.poppins};
             font-size: ${({ theme }) => theme.textSizes.desktop.text};
@@ -42,19 +62,20 @@ const HeaderStyle = styled.header`
                 opacity: 0;
                 cursor: pointer;
                 padding: 0 1.5rem;
-                animation: expand .45s ease forwards;
+                animation: expand .5s ease-out forwards;
 
                 a{
                     color: ${({ theme }) => theme.colors.gray};
                     text-decoration: none;
-                    transition: all .15s ease;
+                    transition: all .2s ease;
 
                     :hover{ color: ${({ theme }) => theme.colors.white}; }
                 }
-                :nth-child(2){ animation-delay: .15s; }
-                :nth-child(3){ animation-delay: .3s; }
+                :nth-child(1){ animation-delay: .65s; }
+                :nth-child(2){ animation-delay: .75s; }
+                :nth-child(3){ animation-delay: .85s; }
                 :nth-child(4){
-                    animation-delay: .45s;
+                    animation-delay: .95s;
                     padding-right: 0;
                  }
             }
@@ -74,7 +95,7 @@ const HeaderStyle = styled.header`
             font-weight: 100;
             letter-spacing: 7px;
             text-transform: uppercase;
-            animation: expand .45s ease forwards;
+            animation: fadeIn .75s ease .5s forwards;
         }
     }
     .header-background{
@@ -184,13 +205,11 @@ const HeaderStyle = styled.header`
             @keyframes menuButtonSlideIn{
                 from{
                     opacity: 0;
-                    // left: -5rem;
-                    transform: scale(0)
+                    transform: translateX(-100%);
                 }
                 to{
                     opacity: 1;
-                    // left: 1.6rem;
-                    transform: scale(1)
+                    transform: translateX(0%);
                 }
             }
             .menu-button{
@@ -201,7 +220,7 @@ const HeaderStyle = styled.header`
                 left: 1rem;
                 top: 1.25rem;
                 width: 24px;
-                animation: menuButtonSlideIn .35s ease-out .2s forwards;
+                animation: menuButtonSlideIn .35s ease-out .45s forwards;
 
                 .dash{
                     position: relative;
@@ -282,17 +301,6 @@ const HeaderStyle = styled.header`
                 }
             }
 
-            @keyframes topToBottom{
-                from{
-                    opacity: 0;
-                    top: -5rem;
-                }
-                to{
-                    opacity: 1;
-                    top: 0;
-                }
-            }
-
             .logo{
                 opacity: 0;
                 font-size: 11px;
@@ -300,7 +308,6 @@ const HeaderStyle = styled.header`
                 position: relative;
                 left: 2px;
                 letter-spacing: 6px;
-                animation: topToBottom .35s ease-in forwards;
             }
         }
 

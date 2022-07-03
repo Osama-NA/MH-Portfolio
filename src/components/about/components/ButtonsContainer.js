@@ -4,9 +4,9 @@ import { Link } from 'react-scroll';
 
 const SCROLL_DURATION = 500
 
-const ButtonsContainer = ({ cv }) => {
+const ButtonsContainer = ({ cv, buttonsRef }) => {
     return (
-        <div className="buttons-container">
+        <div className="buttons-container" ref={buttonsRef}>
             {
                 isMobile() ? <>
                     <Link duration={SCROLL_DURATION} smooth={true} spy={true} to="galleries">

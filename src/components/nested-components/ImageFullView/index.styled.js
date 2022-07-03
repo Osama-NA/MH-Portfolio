@@ -9,7 +9,7 @@ const ImageFullViewStyle = styled.div`
     width: 100vw;
     height: 100vh;
 
-    background-color: #000000cc;
+    background-color: rgba(0,0,0,.85);
     
     display: flex;
     align-items: center;
@@ -19,13 +19,14 @@ const ImageFullViewStyle = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 92vw;
-        height: 75vh;
+        width: auto;
+        height: 82vh;
         
         img{
             width: auto;
-            max-width: 92vw;
+            max-width: 98vw;
             height: 100%;
+            border-radius: 3px;
         }
     }
 
@@ -48,24 +49,24 @@ const ImageFullViewStyle = styled.div`
             display: grid;
             place-items: center;
 
-            height: 50px;
-            width: 50px;
+            height: 35px;
+            width: 35px;
 
             .left-corner{
-                left: -50px;
+                left: -21px;
 
                 ::after{ border-radius: 0 30px 0 0; }
             }
             .right-corner{
-                right: -50px;
+                right: -21px;
 
                 ::after{ border-radius: 30px 0 0 0; }
             }
             .left-corner, .right-corner{
                 position: absolute;
                 top: 0;
-                height: 100%;
-                width: 100%;
+                height: 60%;
+                width: 60%;
                 background-color: ${({ theme }) => theme.colors.offWhite};
 
                 ::after{
@@ -81,8 +82,8 @@ const ImageFullViewStyle = styled.div`
 
             ::after, ::before{
                 content: '';
-                width: 3px;
-                height: 25px;
+                width: 2.5px;
+                height: 15px;
                 background-color: #00030d;
                 border-radius: 5px;
 
@@ -98,48 +99,25 @@ const ImageFullViewStyle = styled.div`
         .image-container{
             height: 55vh;
         }
-
-        .close-container{
-            .close-button{
-                border-radius: 0 0 25px 25px;
-                height: 40px;
-                width: 40px;
-
-                .left-corner{
-                    left: -40px;
-
-                    ::after{ border-radius: 0 25px 0 0; }
-                }
-                .right-corner{
-                    right: -40px;
-
-                    ::after{ border-radius: 25px 0 0 0; }
-                }
-
-                ::after, ::before{
-                    height: 20px;
-
-                    top: 8px;
-                }
-            }
-        }
     }
 
     @media (max-width: 768px){
         .image-container{
             height: auto;
-            width: 90vw;
+            width: 98vw;
 
             img{
                 width: 100%;
-                max-height: 80vh;
+                max-height: 90vh;
                 height: auto;
             }
         }
 
         .close-container{
             .close-button{
-                border-radius: 0 0 0px 45px;
+                height: 50px;
+                width: 50px;
+                border-radius: 0 0 0px 22.5px;
                 right: 0;
 
                 .left-corner, .right-corner{
@@ -149,8 +127,8 @@ const ImageFullViewStyle = styled.div`
                 ::after, ::before{
                     height: 20px;
 
-                    top: 12px;
-                    right: 20px;
+                    top: 13px;
+                    right: 22px;
                 }
             }
         }

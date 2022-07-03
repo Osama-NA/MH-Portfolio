@@ -16,11 +16,42 @@ const AboutStyle = styled.main`
         top: 17.5%;
     }
 
+    @keyframes expandImage{
+        from{
+            opacity: 0;
+            transform: scale(0);
+        }
+        to{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes slideInContent{
+        from{
+            transform: translateY(100%);
+        }
+        to{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInContent{
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+
     .about-image{
+        opacity: 0;
         position: relative;
         width: 425px;
         height: 550px;
-        border-radius: 80px;
+        border-radius: 60px;
         background-repeat: no-repeat;
         background-size: cover;
 
@@ -45,14 +76,17 @@ const AboutStyle = styled.main`
     }
 
     .about-content{
+        opacity: 0;
         width: 41%;
         max-width: 500px;
         margin-left: 1rem;
 
         .title{
+            opacity: 0;
             padding-bottom: 1rem;
         }
         .text{
+            opacity: 0;
             padding: 0 0 2rem 0;
         }
 
@@ -62,12 +96,10 @@ const AboutStyle = styled.main`
             height: 300px;
             background-color: ${({ theme }) => theme.colors.darkBlue};
             border-radius: 0 60px 0 60px;
-
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
             padding: 0 3rem;
-
 
             a{
                 width: 100%;

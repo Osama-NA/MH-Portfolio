@@ -2,7 +2,7 @@ import TitleStyle from './index.styled';
 import { useEffect, useState, useCallback } from 'react';
 import themes from '../../../themes/defaultTheme';
 
-const Title = ({ title, color, weight, letterSpacing }) => {
+const Title = ({ title, color, weight, letterSpacing, titleRef }) => {
 
     const [fontWeight, setFontWeight] = useState("600");
 
@@ -28,7 +28,7 @@ const Title = ({ title, color, weight, letterSpacing }) => {
             color: color,
             fontWeight: fontWeight,
             letterSpacing: letterSpacing
-        }} className="title">{title}</TitleStyle>
+        }} className="title" ref={titleRef}>{title}</TitleStyle>
     );
 }
 

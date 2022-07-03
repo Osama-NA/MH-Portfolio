@@ -199,7 +199,7 @@ const GalleriesStyle = styled.main`
     }
 
     @media (min-width: 769px) and (max-width: 1000px){
-        padding: 3.25rem 0;
+        padding: 0 0  3.25rem;
         
         #galleries{
             top: 0;
@@ -268,7 +268,7 @@ const GalleriesStyle = styled.main`
     }
 
     @media (max-width: 768px){
-        padding: 3rem 0;
+        padding: 0 0  3rem;
         
         #galleries{
             top: 0;

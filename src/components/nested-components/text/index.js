@@ -2,7 +2,7 @@ import TextStyle from './index.styled';
 import { useEffect, useState, useCallback } from 'react';
 import themes from '../../../themes/defaultTheme';
 
-const Text = ({text, color}) => {
+const Text = ({ text, color, textRef }) => {
 
     const [fontWeight, setFontWeight] = useState("300");
 
@@ -22,7 +22,7 @@ const Text = ({text, color}) => {
         <TextStyle style={{
             color: color,
             fontWeight: fontWeight
-        }} className="text">{text}</TextStyle>
+        }} className="text" ref={textRef}>{text}</TextStyle>
     );
 }
 

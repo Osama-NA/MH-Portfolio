@@ -13,7 +13,7 @@ const Index = () => {
     useEffect(() => {
         setTimeout(() => {
             setShowPages(true);
-        }, 1450);
+        }, 1350);
     }, [])
 
     return (

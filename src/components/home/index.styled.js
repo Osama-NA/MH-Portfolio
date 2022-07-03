@@ -21,8 +21,21 @@ const HomeSectionStyle = styled.main`
         color: ${({ theme }) => theme.colors.white};
         z-index: 0;
 
+        @keyframes slideIn{
+            from{
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
+
         .content{
+            opacity: 0;
             position: relative;
+            animation: slideIn .6s ease-out .6s forwards;
 
             h1,h2{
                 font-family: ${({ theme }) => theme.fonts.poppins};
@@ -75,10 +88,23 @@ const HomeSectionStyle = styled.main`
             }
         }
 
+        @keyframes expand{
+            from{
+                opacity: 0;
+                transform: scale(0);
+            }
+            to{
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
         .image-container{
+            opacity: 0;
             display: grid;
             place-items: center;
             z-index: 0;
+            animation: expand .4s ease-out .8s forwards;
 
             .background-circle{
                 position: relative;
@@ -124,15 +150,25 @@ const HomeSectionStyle = styled.main`
         }
     }
 
+    @keyframes fadeInBackground{
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: .6;
+        }
+    }
+
     .blurred-colors-bg{
         position: absolute;
         width: 100%;
         height: 100%;
         z-index: -1;
-        opacity: .6;
+        opacity: 0;
         background: url('${blurredColors}');
         background-size: cover;
         background-repeat: no-repeat;
+        animation: fadeInBackground .35s ease 1s forwards;
     }
 
     .bottom-section-design{
@@ -279,7 +315,6 @@ const HomeSectionStyle = styled.main`
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: .6;
             background: url('${blurredColors}');
             background-size: cover;
             background-position: center;
