@@ -9,7 +9,7 @@ const defaultState = {
     message: ''
 }
 
-const ContactForm = ({ setShowSuccessMessage }) => {
+const ContactForm = ({ setShowSuccessMessage, formRef }) => {
     const [formControl, setFormControl] = useState(defaultState)
 
     const handleFormSubmit = e => {
@@ -53,7 +53,7 @@ const ContactForm = ({ setShowSuccessMessage }) => {
     }
 
     return (
-        <div className="form-container">
+        <div className="form-container" ref={formRef}>
             <form onSubmit={handleFormSubmit}>
                 <div className="form-group">
                     <label>Email</label>

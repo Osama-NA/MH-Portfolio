@@ -117,8 +117,8 @@ const HomeSectionStyle = styled.main`
 
                 .mh-img{
                     position: absolute;
-                    bottom: 0;
-                    width: 450px;
+                    bottom: 0px;
+                    width: 400px;
                     height: auto;
                     border-radius: 50%;
                     z-index: 2;
@@ -225,7 +225,7 @@ const HomeSectionStyle = styled.main`
                     background: linear-gradient(45.24deg, #00FFE0 -2.64%, #001447 45.64%, #FF004D 111.8%);
 
                     .mh-img{
-                        width: 320px;
+                        width: 275px;
                     }
 
                     .arrow{
@@ -296,7 +296,7 @@ const HomeSectionStyle = styled.main`
                     width: 200px;
 
                     .mh-img{
-                        width: 250px;
+                        width: 230px;
                     }
 
                     .arrow{

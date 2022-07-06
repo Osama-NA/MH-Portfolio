@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-scroll';
 import arrow from '../arrow.png';
-import mhImg from '../photoroom.png';
+import mhImg from '../mh-img2.png';
 import { useEffect, useRef, useCallback } from 'react'
 
 const ImageContainer = ({ scroll }) => {

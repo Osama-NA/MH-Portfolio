@@ -9,6 +9,7 @@ const GalleryPageStyle = styled.main`
     min-height: 100vh;
 
     .gallery-header{
+        opacity: 0;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -109,9 +110,11 @@ const GalleryPageStyle = styled.main`
 
     @keyframes slideFromTop{
         from{
+            opacity: 0;
             transform: translateY(-100%);
         }
         to{
+            opacity:1;
             transform: translateY(0%);
         }
     }

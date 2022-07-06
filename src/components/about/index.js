@@ -12,10 +12,10 @@ const observerOptions = {
     threshold: 0.225
 }
 
-const imageAnimation = 'expandImage .8s ease-out .8s forwards'
-const titleAnimation = 'fadeInContent .8s ease-out .7s forwards'
+const imageAnimation = 'expandImage .7s ease-out .7s forwards'
+const titleAnimation = 'fadeInContent .8s ease-out .65s forwards'
 const textAnimation = 'fadeInContent .8s ease-out .8s forwards'
-const buttonsAnimation = 'slideInContent .7s ease-out forwards'
+const buttonsAnimation = 'slideInContent .8s ease-out forwards'
 
 const About = ({ content, aboutRef }) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -25,7 +25,6 @@ const About = ({ content, aboutRef }) => {
     const contentRef = useRef()
     const textRef = useRef()
     const titleRef = useRef()
-
 
     // INTERSECTION OBSERVER
     const observerCallback = entries => {

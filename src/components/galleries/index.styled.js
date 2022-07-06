@@ -15,6 +15,7 @@ const GalleriesStyle = styled.main`
     }
 
     .galleries-title{
+        opacity: 0;
         font-family: ${({ theme }) => theme.fonts.jost};
         color: ${({ theme }) => theme.colors.darkBlue};
         text-transform: uppercase;
@@ -89,9 +90,9 @@ const GalleriesStyle = styled.main`
 
                 .image-container{
                     cursor: pointer;
-                    width: 285px;
+                    width: 310px;
                     height: 375px;
-                    border-radius: 0 50px 0 50px;
+                    border-radius: 0 45px 0 45px;
                     margin: 0 1.5rem;
                 }
             }

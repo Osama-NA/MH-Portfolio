@@ -20,10 +20,42 @@ const ContactStyle = styled.main`
         top: 17.5%;
     }
 
+    @keyframes fadeInBackground{
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: .6;
+        }
+    }
+
+    @keyframes slideDown{
+        from{
+            opacity: 0;
+            top: -100%;
+        }
+        to{
+            opacity: .7;
+            top: 17.5px;
+        }
+    }
+
+    @keyframes slideRight{
+        from{
+            opacity: 0;
+            left: -100%;
+        }
+        to{
+            opacity: .7;
+            left: 0;
+        }
+    }
+
     .contact-title-container{
         display: none;
     }
     .info-container{
+        opacity: 0;
         color: ${({ theme }) => theme.colors.white};
 
         .title{
@@ -82,6 +114,7 @@ const ContactStyle = styled.main`
     }
 
     .form-container{
+        opacity: 0;
         display: flex;
         flex-direction: column;
         position: relative;
@@ -216,7 +249,7 @@ const ContactStyle = styled.main`
         justify-content: space-between;
         height: 65px;
         align-items: center;
-        opacity: .7;
+        opacity: 0;
 
         .arrow{
             position: relative;
@@ -260,7 +293,7 @@ const ContactStyle = styled.main`
         justify-content: space-between;
         height: 70px;
         align-items: center;
-        opacity: .7;
+        opacity: 0;
 
         .arrow{
             position: relative;
@@ -302,7 +335,7 @@ const ContactStyle = styled.main`
         width: 100%;
         height: 100%;
         z-index: -1;
-        opacity: .6;
+        opacity: 0;
         background: url('${blurredColors}');
         background-size: cover;
         background-position: center;
@@ -484,6 +517,7 @@ const ContactStyle = styled.main`
                 opacity: .7;
             }
             .contact-title{
+                opacity: 0;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -605,6 +639,7 @@ const ContactStyle = styled.main`
             left: unset;
             transform: rotateZ(270deg);
             height: 35px;
+            opacity: .7;
 
             .arrow{
                 svg{
@@ -633,7 +668,6 @@ const ContactStyle = styled.main`
 
         .blurred-colors-bg{
             z-index: -1;
-            opacity: .6;
             background: url('${mobileBlurredColors}');
             background-size: cover;
             background-position: center;
