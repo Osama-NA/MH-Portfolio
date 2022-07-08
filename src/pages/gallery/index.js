@@ -1,6 +1,5 @@
 import GalleryPageStyle from "./index.styled";
-import { useEffect, useState, useContext, useCallback } from 'react';
-import { GalleriesContext } from '../../context/GalleriesContext'
+import { useEffect, useState, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Gallery from './components/Gallery'
 import BackButton from './components/BackButton'
@@ -8,11 +7,9 @@ import BackButton from './components/BackButton'
 const REQUEST_URL = gallery => `${process.env.REACT_APP_SERVER_URL}/portfolio/get-gallery?gallery=${gallery}`;
 const SERVER_SECRET = process.env.REACT_APP_SERVER_JWT_TOKEN;
 
-const Index = () => {
+const Index = ({galleries}) => {
     const [gallery, setGallery] = useState([]);
     const [galleryName, setGalleryName] = useState('')
-
-    const { galleries } = useContext(GalleriesContext)
 
     const location = useLocation()
 
@@ -34,10 +31,13 @@ const Index = () => {
 
     useEffect(() => {
         const thisGalleryName = location.pathname.replace("/gallery/", "")
-        const thisGallery = galleries.filter(gallery => gallery.galleryName === thisGalleryName)
+        setGalleryName(thisGalleryName.replaceAll("%20", " "))
 
-        setGalleryName(thisGalleryName)
-        if (thisGallery.length > 0) setGallery(thisGallery[0].gallery)
+        if (galleries && galleries.length > 0) {
+            const thisGallery = galleries.filter(gallery => gallery.galleryName === thisGalleryName)
+
+            setGallery(thisGallery[0].gallery)
+        }
         else getGallery()
     }, [galleries, getGallery, location.pathname])
 

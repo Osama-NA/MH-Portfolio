@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mobileBackgroundImage from './mobileBackgroundImage.jpg';
+import buttonContainerImage from './mobileAboutBackgroundImage.jpg'
 
 const AboutStyle = styled.main`
     padding-top: 125px;
@@ -206,9 +206,15 @@ const AboutStyle = styled.main`
     @media (max-width: 768px){
         padding-top: 20px;
         min-height: 700px;
+        max-width: 100vw;
 
         .about-image{
             display: none;
+        }
+    
+        #about{
+            position: absolute;
+            top: 5%;
         }
 
         .about-content{
@@ -226,9 +232,8 @@ const AboutStyle = styled.main`
             .buttons-container{
                 height: 250px;
                 border-radius: 0 50px 0 50px;
-
-                background-image: url('${mobileBackgroundImage}');
                 // background-image: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1653317630/10_dbyrpy.jpg');
+                background-image: url('${buttonContainerImage}');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;

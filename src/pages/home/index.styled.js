@@ -13,5 +13,9 @@ const HomePageStyle = styled.div`
         left: 0;
         z-index: -1;
     }
+
+    @media (max-width: 768px){
+        max-width: 100vw;
+    }
 `
 export default HomePageStyle;

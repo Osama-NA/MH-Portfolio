@@ -11,7 +11,7 @@ const GalleriesStyle = styled.main`
     
     #galleries{
         position: absolute;
-        top: -12.5%;
+        top: -4%;
     }
 
     .galleries-title{
@@ -30,6 +30,7 @@ const GalleriesStyle = styled.main`
         flex-direction: column;
 
         .gallery{
+            opacity: 0;
             position: relative;
             margin: 4rem 0;
             width: 100%;
@@ -201,6 +202,7 @@ const GalleriesStyle = styled.main`
 
     @media (min-width: 769px) and (max-width: 1000px){
         padding: 0 0  3.25rem;
+        max-width: 100vw;
         
         #galleries{
             top: 0;
@@ -270,9 +272,11 @@ const GalleriesStyle = styled.main`
 
     @media (max-width: 768px){
         padding: 0 0  3rem;
+        max-width: 100vw;
+        overflow: hidden;
         
         #galleries{
-            top: 0;
+            top: -5%;
         }
 
         .galleries-title{
@@ -324,6 +328,7 @@ const GalleriesStyle = styled.main`
                     }
                     .view-button-container{
                         padding: 0 2.5rem;
+                        border: 1.5px solid transparent;
 
                         .view-button{
                             width: 140px;

@@ -1,18 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import LoadingScreenStyle from './index.styled';
-import GradientBackground from './components/GradientBackground';
-import Content from './components/Content';
 
-const LoadingScreen = () => {
+const LoadingScreen = ({ showPages }) => {
     const [showLoadingScreen, setShowLoadingScreen] = useState(true);
 
-    const RemoveLoadingScreen = () => setShowLoadingScreen(false);
+    const screenRef = useRef()
 
-    return  showLoadingScreen &&
-            <LoadingScreenStyle onAnimationEnd={RemoveLoadingScreen} >
-                <Content />
-                <GradientBackground />
-            </LoadingScreenStyle>
+    const removeLoadingScreen = () => setShowLoadingScreen(false);
+
+    useEffect(() => {
+        if (showPages) {
+            screenRef.current.style.animation = 'fadeOut .25s linear forwards'
+        }
+    }, [showPages])
+
+    return showLoadingScreen &&
+        <LoadingScreenStyle ref={screenRef} onAnimationEnd={removeLoadingScreen} >
+            <div className="content">
+                <h1>Mohammad Hammoudi</h1>
+                <div className="loader"></div>
+            </div>
+        </LoadingScreenStyle>
 }
 
 export default LoadingScreen;

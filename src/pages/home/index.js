@@ -4,23 +4,13 @@ import About from '../../components/about/';
 // import Video from '../../components/video/';
 import Galleries from '../../components/galleries/';
 import Contact from '../../components/contact/';
-import { useEffect, useState, useCallback, useContext, useRef } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom'
-import {GalleriesContext} from '../../context/GalleriesContext'
+import { useEffect, useCallback, useRef } from 'react';
+import {  useSearchParams } from 'react-router-dom'
 
-const REQUEST_URL = `${process.env.REACT_APP_SERVER_URL}/portfolio/home-page-content`;
-const SERVER_SECRET = process.env.REACT_APP_SERVER_JWT_TOKEN;
-
-const Home = () => {
+const Home = ({content}) => {
     const aboutRef = useRef()
     const contactsRef = useRef()
     const galleriesRef = useRef()
-
-    const [content, setContent] = useState(null);
-
-    const { setGalleries } = useContext(GalleriesContext)
-
-    const navigate = useNavigate();
 
     const [params] = useSearchParams()
 
@@ -44,27 +34,9 @@ const Home = () => {
         }
     }, [params])
 
-    const getContent = useCallback(async () => {
-        try{
-            const response = await fetch(REQUEST_URL, { headers: { 'x-access-token': SERVER_SECRET } });
-            const data = await response.json();
-
-            if (data.status === 'ok') {
-                setContent(data.content)
-                setGalleries(data.content.galleries)
-                handleNavigation()
-            } else {
-                navigate('page-not-found');
-            }
-        } catch (error) {
-            navigate('page-not-found');
-            console.log(error)
-        }
-    }, [handleNavigation, navigate, setGalleries])
-
     useEffect(() => {
-        getContent();
-    }, [getContent])
+        handleNavigation()
+    }, [handleNavigation])
 
     return content &&
         <HomePageStyle>

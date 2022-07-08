@@ -1,21 +1,24 @@
 import React from 'react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Images from './Images'
 import { Link } from 'react-router-dom'
 
 const observerOptions = {
     root: null,
     rootMargin: "0px",
-    threshold: 0
+    threshold: 0.01
 }
+
+const galleryAnimation = 'fadeInContent .75s ease-out forwards'
 
 let position = window.scrollY
 
-const Gallery = ({gallery}) => {
-    const containerRef = useRef(null)
+const Gallery = ({ gallery }) => {
     const [scroll, setScroll] = useState(0);
     const [scrollDirection, setScrollDirection] = useState('down');
     const [isVisible, setIsVisible] = useState(false);
+
+    const galleryRef = useRef()
 
     const handleScrollDirection = () => {
         let newScroll = window.scrollY
@@ -37,12 +40,21 @@ const Gallery = ({gallery}) => {
 
     useEffect(() => {
         const observer = new IntersectionObserver(observerCallback, observerOptions)
-        if (containerRef.current) observer.observe(containerRef.current)
+        if (galleryRef.current) observer.observe(galleryRef.current)
 
         return () => {
-            if (containerRef.current) observer.unObserve(containerRef.current)
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            if (galleryRef.current) observer.unObserve(galleryRef.current)
         }
-    }, [containerRef])
+    }, [galleryRef])
+
+    useEffect(() => {
+        if (isVisible) {
+            galleryRef.current.style.animation = galleryAnimation
+        } else {
+            galleryRef.current.style.animation = 'none'
+        }
+    }, [isVisible])
 
     useEffect(() => {
         return () => {
@@ -53,7 +65,7 @@ const Gallery = ({gallery}) => {
     }, [])
 
     return (
-        <section className="gallery" ref={containerRef}>
+        <section className="gallery" ref={galleryRef}>
             <GalleryTitle title={gallery.galleryName}  />
             <Images scroll={scroll} scrollDirection={scrollDirection} isVisible={isVisible} gallery={gallery.gallery} />
             <ViewGallery galleryName={gallery.galleryName} />

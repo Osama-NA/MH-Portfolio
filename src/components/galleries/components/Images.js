@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect, useRef, useCallback, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ImageFullView from '../../nested-components/ImageFullView'
 
 const imageStyle = image => {
@@ -25,40 +25,40 @@ const Images = ({ scroll, scrollDirection, isVisible, gallery }) => {
         setFullViewImage(imageSource)
     }
 
-    const translateY = (element, value) => element.current.style.transform = `translateY(${value}%)`
+    // const translateY = (element, value) => element.current.style.transform = `translateY(${value}%)`
 
-    const getY = () => {
-        const y = image1Ref.current.style.transform.replace('translateY(', '').replace('%)', '') || 0
-        return parseInt(y)
-    }
+    // const getY = () => {
+    //     const y = image1Ref.current.style.transform.replace('translateY(', '').replace('%)', '') || 0
+    //     return parseInt(y)
+    // }
 
-    const moveImage = useCallback((image, y, direction) => {
-        if (y > -2 && y < 23) translateY(image, y * direction)
-        if (y > 22) translateY(image, 22 * direction)
-        if (y <= 0) translateY(image, 0)
-    }, [])
+    // const moveImage = useCallback((image, y, direction) => {
+    //     if (y > -2 && y < 23) translateY(image, y * direction)
+    //     if (y > 22) translateY(image, 22 * direction)
+    //     if (y <= 0) translateY(image, 0)
+    // }, [])
 
-    const moveImagesOnScroll = useCallback(() => {
-        // get translateY value of the images Container
-        let y = getY()
+    // const moveImagesOnScroll = useCallback(() => {
+    //     // get translateY value of the images Container
+    //     let y = getY()
 
-        // check if user scrolling up or down and inc/dec y accordingly
-        if (scrollDirection === 'down') y++
-        if (scrollDirection === 'up') y--
+    //     // check if user scrolling up or down and inc/dec y accordingly
+    //     if (scrollDirection === 'down') y++
+    //     if (scrollDirection === 'up') y--
 
-        // both images move using same value but in opposite direction by passing 1 or -1
-        moveImage(image1Ref, y, 1)
-        moveImage(image2Ref, y, -1)
-    }, [moveImage, scrollDirection])
+    //     // both images move using same value but in opposite direction by passing 1 or -1
+    //     moveImage(image1Ref, y, 1)
+    //     moveImage(image2Ref, y, -1)
+    // }, [moveImage, scrollDirection])
 
-    useEffect(() => {
-        if (isVisible) moveImagesOnScroll()
-    }, [moveImagesOnScroll, isVisible, scroll])
+    // useEffect(() => {
+    //     if (isVisible) moveImagesOnScroll()
+    // }, [moveImagesOnScroll, isVisible, scroll])
 
-    useEffect(() => {
-        translateY(image1Ref, 22)
-        translateY(image2Ref, -22)
-    }, [])
+    // useEffect(() => {
+    //     translateY(image1Ref, 22)
+    //     translateY(image2Ref, -22)
+    // }, [])
 
     useEffect(() => {
         const styles = gallery.map(image => imageStyle(image.imageURL))

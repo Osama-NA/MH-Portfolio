@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import loadingScreen from './loading-screen.png'
 
 const LoadingScreenStyle = styled.nav`
     position: fixed;
@@ -9,10 +10,12 @@ const LoadingScreenStyle = styled.nav`
     width: 100vw;
     height: 100vh;
     background-color: ${({ theme }) => theme.colors.darkBlue};
-
+    // background-image: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1657294721/bg_dmycb2.png');
+    background-image: url('${loadingScreen}');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 140% 105%;
     z-index: 10;
-
-    animation: fadeOut .25s linear 1.75s forwards;
 
     @keyframes fadeOut{
         0%{
@@ -59,48 +62,19 @@ const LoadingScreenStyle = styled.nav`
             width: 20px;
             height: 2px;
             background-color: ${({ theme }) => theme.colors.darkBlue};
-            animation: load 1.75s ease infinite;
+            animation: load 3s ease infinite;
         }
     }
-    .blur-layer{
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        z-index: 2;
-        backdrop-filter: blur(52px);
-    }
-    .blurred-colors{
-        display: grid;
-        place-items: center;
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
 
-        .color-1{
-            opacity: .5;
-            position: relative;
-            top: -2rem;
-            left: -2rem;
-            width: 300px;
-            height: 65px;
-            z-index: 1;
-            border-radius: 50%;
-            background: linear-gradient(60.53deg, ${({ theme }) => theme.colors.blue} 216.57%, rgba(252, 0, 255, 0) 216.58%);
-            transform: matrix(0.98, 0.05, 0.21, 1, 0, 0);
-        }
-        .color-2{
-            opacity: .7;
-            position: absolute;
-            width: 340px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(60.53deg, ${({ theme }) => theme.colors.pink} 216.57%, rgba(252, 0, 255, 0) 216.58%);
-            transform: matrix(-0.99, -0.28, 0.13, 0.96, 0, 0);
-        }
+    // TABLET DESIGN
+    @media (min-width: 769px) and (max-width: 1000px) {
+        background-size: 250% 100%;
     }
 
     // MOBILE DESIGN
     @media (max-width: 768px) {
+        background-size: 275% 100%;
+
         @keyframes load{
             0%{
                 transform: translateX(0);
@@ -116,23 +90,6 @@ const LoadingScreenStyle = styled.nav`
             }
             .loader{
                 width: 120px;
-            }
-        }
-        .blur-layer{
-            backdrop-filter: blur(30px);
-        }
-        .blurred-colors{
-            .color-1{
-                opacity: .45;
-                top: -2rem;
-                left: -1rem;
-                width: 200px;
-                height: 30px;
-            }
-            .color-2{
-                opacity: .8;
-                width: 150px;
-                height: 22px;
             }
         }
     }

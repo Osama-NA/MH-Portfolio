@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import bottomDesign from './bottom-background.svg';
-import blurredColors from './blurred-colors-bg.png';
 
 const HomeSectionStyle = styled.main`
     position: relative;
@@ -165,7 +164,7 @@ const HomeSectionStyle = styled.main`
         height: 100%;
         z-index: -1;
         opacity: 0;
-        background: url('${blurredColors}');
+        background: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1657296605/blurred-colors-bg_iicvfm.png');
         background-size: cover;
         background-repeat: no-repeat;
         animation: fadeInBackground .35s ease 1s forwards;
@@ -243,6 +242,7 @@ const HomeSectionStyle = styled.main`
     @media (max-width: 768px){
         height: 700px;
         min-height: 700px;
+        max-width: 100vw;
 
         .container{
             height: 100%;
@@ -315,7 +315,7 @@ const HomeSectionStyle = styled.main`
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: url('${blurredColors}');
+            background: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1657296556/blurred-colors-bg1_tuoaah.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

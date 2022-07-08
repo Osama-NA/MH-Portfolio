@@ -26,7 +26,7 @@ const Content = ({ scroll, cv }) => {
 
     return (
         <section className="content">
-            <h1>I am Moe,</h1>
+            <h1>I am Mohammad,</h1>
             <h2>a professional</h2>
             <h2>photographer / editor.</h2>
 

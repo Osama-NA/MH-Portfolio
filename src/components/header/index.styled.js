@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import backgroundHeader from './gallery-header-bg.png'
+import galleryBackground from './gallery-header-bg.png'
 
 const HeaderStyle = styled.header`
     position: fixed;
@@ -63,7 +63,10 @@ const HeaderStyle = styled.header`
                 cursor: pointer;
                 padding: 0 1.5rem;
                 animation: expand .5s ease-out forwards;
+                    transition: all .2s ease;
+                    color: ${({ theme }) => theme.colors.gray};
 
+                    :hover{ color: ${({ theme }) => theme.colors.white}; }
                 a{
                     color: ${({ theme }) => theme.colors.gray};
                     text-decoration: none;
@@ -105,7 +108,8 @@ const HeaderStyle = styled.header`
         height: 100%;
         max-width: 1600px;
         width: 101%;
-        background-image: url('${backgroundHeader}');
+        // background-image: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1657296817/gallery-header-bg_une4uw.png');
+        background-image: url('${galleryBackground}');
         background-position: center;
         background-size: cover;
     }
@@ -132,6 +136,7 @@ const HeaderStyle = styled.header`
     // MOBILE DESIGN
     @media (max-width: 768px){
         min-width: 350px;
+        max-width: 100vw;
         position: fixed;
         width: 100vw;
         padding: 0;

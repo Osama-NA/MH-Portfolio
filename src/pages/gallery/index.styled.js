@@ -216,6 +216,7 @@ const GalleryPageStyle = styled.main`
 
     @media (max-width: 768px){
         padding-top: 3.25rem;
+        max-width: 100vw;
 
         .gallery-header{
             flex-direction: column-reverse;

@@ -1,8 +1,5 @@
 import styled from 'styled-components'
-import x from './socials-button.png'
-import y from './form-bg.png'
-import blurredColors from './bg.png';
-import mobileBlurredColors from './mobile-bg.png';
+import formBackgroundImage from './contact-form-bg.png'
 
 const ContactStyle = styled.main`
     position: relative;
@@ -102,7 +99,8 @@ const ContactStyle = styled.main`
                     position: absolute;
                     width: 100%;
                     height: 100%;
-                    background: url('${x}');
+                    // background: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1657298229/socials-button_isdaa5.png');
+                    background: url('${formBackgroundImage}');
                     background-repeat: no-repeat;
                     background-size: 115% 115%;
                     background-position: center;
@@ -148,8 +146,10 @@ const ContactStyle = styled.main`
                     padding:  .6rem;
                     background-color: transparent;
                     font-size: 16px;
-                    border-bottom: 1px solid #f8f8f8c2;
+                    border: 1px solid #f8f8f8c2;
+                    border-width: 0 0 1px 0;
                     letter-spacing: 3px;
+                    border-radius: 0;
                 }
                 input::placeholder, textarea::placeholder{
                     font-family : ${({ theme }) => theme.fonts.jost};
@@ -205,7 +205,7 @@ const ContactStyle = styled.main`
             position: absolute;
             width: 100%;
             height: 100%;
-            background: url('${y}');
+            background: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1657298077/contact-form-bg_fjdtfe.png');
             background-size: cover;
             background-position: center;
             opacity: .9;
@@ -336,7 +336,7 @@ const ContactStyle = styled.main`
         height: 100%;
         z-index: -1;
         opacity: 0;
-        background: url('${blurredColors}');
+        background: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1657297930/bg_lpb08o.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -437,11 +437,6 @@ const ContactStyle = styled.main`
                     }
                 }
             }
-            ::after{
-                background: url('${y}');
-                background-size: cover;
-                background-position: center;
-            }
         }
 
         .success-message{
@@ -500,7 +495,12 @@ const ContactStyle = styled.main`
         justify-content: center;
         padding: 5rem 1rem 7rem;
         overflow: hidden;
+        max-width: 100vw;
 
+        #contact{
+            position: absolute;
+            top: -15%;
+        }
         .contact-title-container{
             display: flex;
             align-items: center;
@@ -562,8 +562,8 @@ const ContactStyle = styled.main`
                     height: 75px;
 
                     a{
-                        left: .9px;
-                        top: -1px;
+                        left: .4px;
+                        top: .3px;
 
                         svg{
                             font-size:  16px;
@@ -571,7 +571,7 @@ const ContactStyle = styled.main`
                     }
 
                     ::after{
-                        background: url('${x}');
+                        background: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1657298229/socials-button_isdaa5.png');
                         background-size: 115% 115%;
                         background-position: center;
                         opacity: .8;
@@ -611,13 +611,13 @@ const ContactStyle = styled.main`
                     .reset, .submit{
                         border: 1.25px solid transparent;
                         font-size: 10px;
-                        border-radius: 0  16px 0 16px;
                     }
                     .reset{
                         margin: .5rem 1.5rem;
                     }
                     .submit{
                         padding: .5rem 1.5rem;
+                        border-radius: 0  16px 0 16px;
                     }
                 }
             }
@@ -668,7 +668,7 @@ const ContactStyle = styled.main`
 
         .blurred-colors-bg{
             z-index: -1;
-            background: url('${mobileBlurredColors}');
+            background: url('https://res.cloudinary.com/mohamad-hamoudii/image/upload/v1657297826/mobile-bg_leliyr.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

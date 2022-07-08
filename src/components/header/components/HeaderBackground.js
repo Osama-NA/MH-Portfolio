@@ -30,7 +30,8 @@ const HeaderBackground = ({ scroll }) => {
 
     useEffect(() => {
         const page = location.pathname
-        if (page !== '/' || isMobile()){
+        if (page !== '/' || isMobile()) {
+            headerBackground.current.parentNode.style.backgroundColor = theme.colors.darkBlue;
             setClassName('header-background')
         } else {
             setClassName('')

@@ -27,6 +27,7 @@ const Index = ({ galleries, galleriesRef }) => {
         if (containerRef.current) observer.observe(containerRef.current)
 
         return () => {
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             if (containerRef.current) observer.unObserve(containerRef.current)
         }
     }, [containerRef])
