@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const GalleriesStyle = styled.main`
-    position: relative;
+    // position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ const GalleriesStyle = styled.main`
 
         .gallery{
             opacity: 0;
-            position: relative;
+            // position: relative;
             margin: 4rem 0;
             width: 100%;
             display: flex;

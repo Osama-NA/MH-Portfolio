@@ -1,5 +1,5 @@
 import GalleryPageStyle from "./index.styled";
-import { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Gallery from './components/Gallery'
 import BackButton from './components/BackButton'

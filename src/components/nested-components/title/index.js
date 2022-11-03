@@ -1,5 +1,5 @@
 import TitleStyle from './index.styled';
-import { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import themes from '../../../themes/defaultTheme';
 
 const Title = ({ title, color, weight, letterSpacing, titleRef }) => {

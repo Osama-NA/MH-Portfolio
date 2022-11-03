@@ -1,4 +1,5 @@
 import UnfilledButtonStyle from "../styles/UnfilledButton.styled";
+import React from 'react';
 
 const UnfilledButton = ({ text, width }) => {
     return (

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import ImageFullView from '../../../components/nested-components/ImageFullView/'
 
 const Gallery = ({ gallery, galleryName }) => {

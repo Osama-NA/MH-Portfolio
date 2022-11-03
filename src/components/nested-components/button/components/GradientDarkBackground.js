@@ -1,4 +1,5 @@
 import GradientDarkBackgroundStyle from "../styles/GradientDarkBackground.styled";
+import React from 'react';
 
 const GradientDarkBackground = ({ text, width }) => {
     return (

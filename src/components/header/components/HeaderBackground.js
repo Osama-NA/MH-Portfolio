@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 
 const isMobile = () => document.body.offsetWidth < 769;
 
-const HeaderBackground = ({ scroll }) => {
+const HeaderBackground = ({ scroll, headerRef }) => {
     const [className, setClassName] = useState('')
     
     const location = useLocation()
@@ -13,15 +13,18 @@ const HeaderBackground = ({ scroll }) => {
     const headerBackground = useRef();
 
     const addHeaderBackground = useCallback(() => {
-        headerBackground.current.parentNode.style.backgroundColor = theme.colors.darkBlue;
+        headerRef.current.style.backgroundColor = theme.colors.darkBlue;
     }, [])
 
     const removeHeaderBackground = useCallback(() => {
-        headerBackground.current.parentNode.style.backgroundColor = "transparent";
+        headerRef.current.style.backgroundColor = "transparent";
     }, [])
 
+    const handleBackgroundColor = scroll => {
+
+    }
     useEffect(() => {
-        if(isMobile()) return;
+        if(isMobile() || location.pathname !== '/') return;
 
         scroll > 20 ?
             addHeaderBackground() :
@@ -31,7 +34,7 @@ const HeaderBackground = ({ scroll }) => {
     useEffect(() => {
         const page = location.pathname
         if (page !== '/' || isMobile()) {
-            headerBackground.current.parentNode.style.backgroundColor = theme.colors.darkBlue;
+            headerRef.current.style.backgroundColor = theme.colors.darkBlue;
             setClassName('header-background')
         } else {
             setClassName('')

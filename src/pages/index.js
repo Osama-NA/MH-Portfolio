@@ -4,7 +4,7 @@ import Home from './home/';
 import Gallery from './gallery';
 import LoadingScreen from '../components/loading-screen/';
 import PageNotFound from '../components/page-not-found/';
-import { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 const REQUEST_URL = `${process.env.REACT_APP_SERVER_URL}/portfolio/home-page-content`;
 const SERVER_SECRET = process.env.REACT_APP_SERVER_JWT_TOKEN;

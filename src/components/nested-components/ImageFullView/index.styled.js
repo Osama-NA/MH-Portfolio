@@ -4,7 +4,7 @@ const ImageFullViewStyle = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 30;
+    z-index: 300;
 
     width: 100vw;
     height: 100vh;
@@ -21,6 +21,7 @@ const ImageFullViewStyle = styled.div`
         justify-content: center;
         width: auto;
         height: 82vh;
+        z-index: 2;
         
         img{
             width: auto;
@@ -38,7 +39,7 @@ const ImageFullViewStyle = styled.div`
         height: 100vh;
         display: flex;
         justify-content: center;
-        z-index: -1;
+        z-index: 1;
 
         .close-button{
             cursor: pointer;

@@ -1,5 +1,5 @@
 import AboutStyle from './index.styled';
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import theme from '../../themes/defaultTheme';
 import Title from '../nested-components/title/'
 import Text from '../nested-components/text/';

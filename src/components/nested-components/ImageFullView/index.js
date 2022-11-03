@@ -1,4 +1,5 @@
 import ImageFullViewStyle from './index.styled'
+import React from 'react';
 
 const Index = ({ setFullViewImage, src, setShowFullView}) => {
     const closeFullView = () => {

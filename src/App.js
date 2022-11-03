@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from './themes/defaultTheme';
 import Index from './pages/';
 import './globalStyle.css';
+import React from 'react';
 
 const App = () => {
     return (

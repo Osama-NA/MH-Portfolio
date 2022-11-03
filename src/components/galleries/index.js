@@ -1,6 +1,6 @@
 import GalleriesStyle from "./index.styled"
 import Gallery from './components/Gallery'
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const observerOptions = {
     root: null,

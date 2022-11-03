@@ -1,5 +1,5 @@
 import HomeSectionStyle from './index.styled';
-import { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Content from './components/Content'
 import ImageContainer from './components/ImageContainer'
 

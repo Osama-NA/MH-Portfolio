@@ -6,7 +6,7 @@ import theme from '../../themes/defaultTheme';
 import ContactForm from './components/ContactForm'
 import Arrows from './components/Arrows'
 import SuccessMessage from './components/SuccessMessage'
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const observerOptions = {
     root: null,

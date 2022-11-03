@@ -4,7 +4,7 @@ import About from '../../components/about/';
 // import Video from '../../components/video/';
 import Galleries from '../../components/galleries/';
 import Contact from '../../components/contact/';
-import { useEffect, useCallback, useRef } from 'react';
+import React, { useEffect, useCallback, useRef } from 'react';
 import {  useSearchParams } from 'react-router-dom'
 
 const Home = ({content}) => {
